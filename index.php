@@ -18,6 +18,7 @@
     <?php
         require_once 'WeixinJsApi.php';
 
+        // AppID & AppSecret
         $weixin = new WeixinJsApi('', '');
         $url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $config = $weixin->get_config($url);
@@ -26,9 +27,16 @@
     var config = <?php echo json_encode($config); ?>;
 
     config['debug'] = true;
-    config['jsApiList'] = ['checkJsApi'];
+    config['jsApiList'] = ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage'];
 
     wx.config(config);
+    wx.ready(function() {
+        wx.getNetworkType({
+            success: function (res) {
+                alert('网络类型: ' + res.networkType);
+            }
+        });
+    });
 </script>
 </body>
 </html>
