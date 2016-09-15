@@ -2,9 +2,9 @@
 
 ### Demo URL
 
-http://api.wxpages.com
+http://x.url.cn
 
-![](img/qr.png)
+![](http://mp.weixin.qq.com/wiki/static/assets/e5afe45f8fe7b17bb1534be0545704ab.png)
 
 ### Warning
 
